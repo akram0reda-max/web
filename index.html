@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Bull Mods – Support & Mods Hub</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Bull Mods – Fer3on_Mod official hub for mods, downloads and support." />
+
+  <style>
+    :root {
+      --bg: #020617;
+      --bg-alt: #02081a;
+      --card: #020817;
+      --accent: #38bdf8;
+      --accent-soft: rgba(56, 189, 248, 0.12);
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --border: rgba(148, 163, 184, 0.25);
+      --danger: #f97373;
+      --radius-lg: 18px;
+      --radius-xl: 999px;
+      --shadow-soft: 0 18px 45px rgba(0, 0, 0, 0.45);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at top, #1f2937 0, #020617 55%, #000 100%);
+      color: var(--text);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 20px 16px 40px;
+    }
+
+    /* Header */
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 26px;
+      gap: 12px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-mark {
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
+      background: radial-gradient(circle at 30% 0, #38bdf8, #0ea5e9 40%, #0b1120 80%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 1rem;
+      color: #0b1120;
+      box-shadow: 0 0 0 1px rgba(15, 23, 42, 0.7);
+    }
+
+    .logo-text-main {
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .logo-text-sub {
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.85rem;
+    }
+
+    .nav-link {
+      padding: 6px 10px;
+      border-radius: 999px;
+      color: var(--muted);
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: 0.18s ease;
+    }
+
+    .nav-link:hover {
+      color: var(--text);
+      border-color: rgba(148, 163, 184, 0.4);
+      background: rgba(15, 23, 42, 0.7);
+    }
+
+    .nav-cta {
+      padding: 7px 14px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #38bdf8, #22c55e);
+      color: #0b1120;
+      font-weight: 600;
+      box-shadow: 0 8px 24px rgba(34, 211, 238, 0.3);
+      border: none;
+      cursor: pointer;
+      font-size: 0.86rem;
+    }
+
+    /* Hero */
+    .hero {
+      display: grid;
+      gap: 22px;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+      align-items: center;
+      margin-bottom: 32px;
+    }
+
+    .hero-main-title {
+      font-size: 2rem;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+
+    .hero-main-title span {
+      background: linear-gradient(135deg, #38bdf8, #22c55e);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero-subtitle {
+      font-size: 0.96rem;
+      color: var(--muted);
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+
+    .badge {
+      font-size: 0.75rem;
+      border-radius: 999px;
+      padding: 5px 10px;
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      background: rgba(15, 23, 42, 0.8);
+      color: var(--muted);
+    }
+
+    .badge-accent {
+      border-color: rgba(56, 189, 248, 0.7);
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-weight: 500;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .btn-primary {
+      border-radius: 999px;
+      padding: 9px 18px;
+      background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+      border: none;
+      color: #0b1120;
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+      box-shadow: 0 10px 30px rgba(56, 189, 248, 0.4);
+    }
+
+    .btn-secondary {
+      border-radius: 999px;
+      padding: 8px 15px;
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      color: var(--text);
+      font-size: 0.86rem;
+      cursor: pointer;
+    }
+
+    .hero-footnote {
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    .hero-card {
+      background: rgba(15, 23, 42, 0.92);
+      border-radius: var(--radius-lg);
+      padding: 18px 18px 16px;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid var(--border);
+    }
+
+    .hero-card-title {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .hero-card-subtitle {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+
+    .hero-stats {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .hero-stat-item {
+      flex: 1;
+      background: rgba(15, 23, 42, 0.9);
+      border-radius: 12px;
+      padding: 8px 9px;
+      border: 1px solid rgba(31, 41, 55, 1);
+    }
+
+    .hero-stat-label {
+      font-size: 0.7rem;
+      color: var(--muted);
+      margin-bottom: 4px;
+    }
+
+    .hero-stat-value {
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+
+    .hero-activity {
+      font-size: 0.78rem;
+      color: var(--muted);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 6px;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: #22c55e;
+      box-shadow: 0 0 12px rgba(34, 197, 94, 0.9);
+      margin-right: 6px;
+    }
+
+    /* Mods section */
+    section {
+      margin-bottom: 30px;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+
+    .section-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+
+    .section-subtitle {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+
+    .search-input {
+      flex: 1 1 160px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      background: rgba(15, 23, 42, 0.9);
+      padding: 7px 12px;
+      font-size: 0.85rem;
+      color: var(--text);
+      outline: none;
+    }
+
+    .search-input::placeholder {
+      color: #6b7280;
+    }
+
+    .select-input {
+      flex: 0 0 150px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      background: rgba(15, 23, 42, 0.9);
+      padding: 7px 10px;
+      font-size: 0.84rem;
+      color: var(--text);
+      outline: none;
+    }
+
+    .mods-grid {
+      display: grid;
+      gap: 14px;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    }
+
+    .mod-card {
+      background: rgba(15, 23, 42, 0.9);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      padding: 14px 14px 13px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.38);
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .mod-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    .mod-name {
+      font-size: 0.98rem;
+      font-weight: 600;
+    }
+
+    .mod-game {
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    .mod-pill {
+      font-size: 0.72rem;
+      border-radius: 999px;
+      padding: 4px 8px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      border: 1px solid rgba(56, 189, 248, 0.6);
+      white-space: nowrap;
+    }
+
+    .mod-description {
+      font-size: 0.8rem;
+      color: var(--muted);
+      line-height: 1.5;
+      margin-top: 4px;
+    }
+
+    .mod-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.74rem;
+      color: var(--muted);
+      margin-top: 4px;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      margin-top: 4px;
+    }
+
+    .tag {
+      font-size: 0.7rem;
+      padding: 3px 7px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(55, 65, 81, 0.9);
+      color: #9ca3af;
+    }
+
+    .mod-actions {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 8px;
+      gap: 8px;
+    }
+
+    .btn-download {
+      flex: 1;
+      border-radius: 999px;
+      padding: 7px 0;
+      background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+      border: none;
+      color: #0b1120;
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-align: center;
+    }
+
+    .download-note {
+      font-size: 0.7rem;
+      color: var(--muted);
+      text-align: right;
+    }
+
+    .status-pill {
+      border-radius: 999px;
+      padding: 3px 8px;
+      font-size: 0.7rem;
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      background: rgba(15, 23, 42, 0.8);
+      color: var(--muted);
+    }
+
+    .status-beta {
+      border-color: rgba(250, 204, 21, 0.7);
+      color: #facc15;
+    }
+
+    .status-broken {
+      border-color: rgba(248, 113, 113, 0.7);
+      color: var(--danger);
+    }
+
+    /* Support / footer */
+    .support-card {
+      background: rgba(15, 23, 42, 0.95);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      padding: 16px 16px 14px;
+      box-shadow: var(--shadow-soft);
+      font-size: 0.84rem;
+      color: var(--muted);
+    }
+
+    .support-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 9px;
+    }
+
+    .support-chip {
+      border-radius: 999px;
+      padding: 6px 11px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      font-size: 0.8rem;
+    }
+
+    footer {
+      margin-top: 22px;
+      font-size: 0.75rem;
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    /* Responsive */
+    @media (max-width: 800px) {
+      .hero {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav {
+        width: 100%;
+        justify-content: space-between;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .hero-main-title {
+        font-size: 1.55rem;
+      }
+
+      .hero-card {
+        margin-top: -4px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <!-- HEADER -->
+    <header>
+      <div class="logo">
+        <div class="logo-mark">BM</div>
+        <div>
+          <div class="logo-text-main">Bull Mods</div>
+          <div class="logo-text-sub">Fer3on_Mod • Mods & Support Hub</div>
+        </div>
+      </div>
+
+      <nav>
+        <button class="nav-link" onclick="scrollToSection('mods')">Mods</button>
+        <button class="nav-link" onclick="scrollToSection('support')">Support</button>
+        <button class="nav-cta" onclick="scrollToSection('mods')">Browse Mods</button>
+      </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero" id="top">
+      <div>
+        <h1 class="hero-main-title">
+          Welcome to <span>Bull Mods</span>
+        </h1>
+        <p class="hero-subtitle">
+          The official hub for Fer3on_Mod. Browse, download and stay updated with the latest
+          Bull Mods builds, tuned for stability, performance and support.
+        </p>
+
+        <div class="hero-badges">
+          <span class="badge badge-accent">Secure direct download links</span>
+          <span class="badge">Hand-picked & tested builds</span>
+          <span class="badge">Fast updates & bugfixes</span>
+        </div>
+
+        <div class="hero-actions">
+          <button class="btn-primary" onclick="scrollToSection('mods')">View all mods</button>
+          <button class="btn-secondary" onclick="scrollToSection('support')">Contact support</button>
+        </div>
+
+        <p class="hero-footnote">
+          Tip: Bookmark this page to always get the latest Bull Mods versions in one place.
+        </p>
+      </div>
+
+      <aside class="hero-card">
+        <div class="hero-card-title">Live status</div>
+        <div class="hero-card-subtitle">Bull Mods services & support</div>
+
+        <div class="hero-stats">
+          <div class="hero-stat-item">
+            <div class="hero-stat-label">Active mods</div>
+            <div class="hero-stat-value" id="stat-active-mods">–</div>
+          </div>
+          <div class="hero-stat-item">
+            <div class="hero-stat-label">Last updated</div>
+            <div class="hero-stat-value" id="stat-last-updated">–</div>
+          </div>
+          <div class="hero-stat-item">
+            <div class="hero-stat-label">Status</div>
+            <div class="hero-stat-value">
+              <span class="dot"></span>Online
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-activity">
+          <span>Recent activity: <span id="stat-recent-activity">New release soon…</span></span>
+          <span>by <strong>Fer3on_Mod</strong></span>
+        </div>
+      </aside>
+    </section>
+
+    <!-- MODS -->
+    <section id="mods">
+      <div class="section-header">
+        <div>
+          <div class="section-title">Available mods</div>
+          <div class="section-subtitle">Search, filter by game, then download directly.</div>
+        </div>
+      </div>
+
+      <div class="filters">
+        <input
+          id="searchInput"
+          class="search-input"
+          type="text"
+          placeholder="Search by mod name, game or tag..."
+        />
+        <select id="gameFilter" class="select-input">
+          <option value="">All games</option>
+        </select>
+      </div>
+
+      <div id="modsGrid" class="mods-grid"></div>
+    </section>
+
+    <!-- SUPPORT -->
+    <section id="support">
+      <div class="section-header">
+        <div>
+          <div class="section-title">Support & community</div>
+          <div class="section-subtitle">
+            Need help with a mod or want to report a bug? Use one of the channels below.
+          </div>
+        </div>
+      </div>
+
+      <div class="support-card">
+        <p>
+          For fast replies, please mention which mod and game you are using, plus a short
+          description of your issue (screenshots help a lot).
+        </p>
+
+        <div class="support-row">
+          <!-- غيّر الروابط دي إلى روابطك الحقيقية -->
+          <a class="support-chip" href="https://discord.com" target="_blank" rel="noopener">
+            Discord server
+          </a>
+          <a class="support-chip" href="https://t.me" target="_blank" rel="noopener">
+            Telegram support
+          </a>
+          <a class="support-chip" href="mailto:your-mail@example.com">
+            Email support
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <span>© <strong>Bull Mods</strong> – Fer3on_Mod. All rights reserved.</span>
+      <span>Hosted securely on GitHub Pages.</span>
+    </footer>
+  </div>
+
+  <script>
+    // =========================
+    // 1) بيانات المودات هنا
+    //  غيّر / أضِف موداتك في هذا الـ Array
+    // =========================
+    const mods = [
+      {
+        name: "Bull Mod – Support Bot UI",
+        game: "Multi-platform",
+        version: "v1.0.0",
+        description:
+          "Lightweight web interface for the Bull Mods support bot with optimized UI and fast loading.",
+        tags: ["support", "web", "utility"],
+        downloadUrl: "https://example.com/download/support-bot-ui.zip",
+        size: "3.4 MB",
+        updatedAt: "2025-02-01",
+        status: "stable", // stable | beta | broken
+      },
+      {
+        name: "Bull Mod – Performance Pack",
+        game: "Game XYZ",
+        version: "v2.3.1",
+        description:
+          "Tweaks and optimizations focused on FPS and latency reduction. Recommended for competitive play.",
+        tags: ["performance", "fps", "tweaks"],
+        downloadUrl: "https://example.com/download/performance-pack.zip",
+        size: "7.8 MB",
+        updatedAt: "2025-01-20",
+        status: "beta",
+      },
+      {
+        name: "Bull Mod – Visual Enhancer",
+        game: "Game XYZ",
+        version: "v1.4.0",
+        description:
+          "Improved visuals, better lighting and color grading while remaining friendly to mid-range systems.",
+        tags: ["graphics", "reshade", "visual"],
+        downloadUrl: "https://example.com/download/visual-enhancer.zip",
+        size: "12.1 MB",
+        updatedAt: "2024-12-10",
+        status: "stable",
+      },
+    ];
+
+    // =========================
+    // 2) وظائف المودات (رسم + فلترة)
+    // =========================
+    const modsGrid = document.getElementById("modsGrid");
+    const searchInput = document.getElementById("searchInput");
+    const gameFilter = document.getElementById("gameFilter");
+
+    function getStatusClass(status) {
+      if (status === "beta") return "status-pill status-beta";
+      if (status === "broken") return "status-pill status-broken";
+      return "status-pill";
+    }
+
+    function getStatusLabel(status) {
+      if (status === "beta") return "BETA";
+      if (status === "broken") return "BROKEN";
+      return "STABLE";
+    }
+
+    function renderGameFilter() {
+      const games = Array.from(new Set(mods.map((m) => m.game))).sort();
+      games.forEach((g) => {
+        const opt = document.createElement("option");
+        opt.value = g;
+        opt.textContent = g;
+        gameFilter.appendChild(opt);
+      });
+    }
+
+    function renderMods() {
+      const query = searchInput.value.trim().toLowerCase();
+      const game = gameFilter.value;
+
+      modsGrid.innerHTML = "";
+
+      const filtered = mods.filter((mod) => {
+        const inGame = !game || mod.game === game;
+        const inText =
+          !query ||
+          mod.name.toLowerCase().includes(query) ||
+          mod.game.toLowerCase().includes(query) ||
+          (mod.tags || []).some((t) => t.toLowerCase().includes(query));
+        return inGame && inText;
+      });
+
+      if (!filtered.length) {
+        modsGrid.innerHTML =
+          '<div style="font-size:0.85rem;color:#9ca3af;">No mods match your filters yet. Try clearing search or game filter.</div>';
+        return;
+      }
+
+      filtered.forEach((mod) => {
+        const card = document.createElement("article");
+        card.className = "mod-card";
+
+        card.innerHTML = `
+          <div class="mod-header">
+            <div>
+              <div class="mod-name">${mod.name}</div>
+              <div class="mod-game">${mod.game} • v${mod.version}</div>
+            </div>
+            <div class="${getStatusClass(mod.status)}">${getStatusLabel(
+          mod.status
+        )}</div>
+          </div>
+
+          <p class="mod-description">${mod.description}</p>
+
+          <div class="mod-meta">
+            <span>Size: ${mod.size}</span>
+            <span>Updated: ${mod.updatedAt}</span>
+          </div>
+
+          <div class="tag-list">
+            ${(mod.tags || [])
+              .map((t) => `<span class="tag">${t}</span>`)
+              .join("")}
+          </div>
+
+          <div class="mod-actions">
+            <a class="btn-download" href="${
+              mod.downloadUrl
+            }" target="_blank" rel="noopener">
+              Download
+            </a>
+            <span class="download-note">Direct link</span>
+          </div>
+        `;
+
+        modsGrid.appendChild(card);
+      });
+    }
+
+    // =========================
+    // 3) إحصائيات بسيطة في الـ Hero
+    // =========================
+    function updateStats() {
+      const statActive = document.getElementById("stat-active-mods");
+      const statUpdated = document.getElementById("stat-last-updated");
+      const statRecent = document.getElementById("stat-recent-activity");
+
+      const activeCount = mods.filter((m) => m.status !== "broken").length;
+      statActive.textContent = activeCount.toString();
+
+      const latest = mods
+        .slice()
+        .sort((a, b) => (a.updatedAt < b.updatedAt ? 1 : -1))[0];
+
+      statUpdated.textContent = latest ? latest.updatedAt : "–";
+      statRecent.textContent = latest
+        ? `${latest.name} (${latest.version})`
+        : "No releases yet";
+    }
+
+    // Utils
+    function scrollToSection(id) {
+      const el = document.getElementById(id);
+      if (el) {
+        window.scrollTo({
+          top: el.offsetTop - 20,
+          behavior: "smooth",
+        });
+      }
+    }
+
+    // Init
+    renderGameFilter();
+    renderMods();
+    updateStats();
+
+    searchInput.addEventListener("input", renderMods);
+    gameFilter.addEventListener("change", renderMods);
+  </script>
+</body>
+</html>
