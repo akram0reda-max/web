@@ -2,167 +2,212 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
-  <title>Bull Mods | Official Mods Hub</title>
+  <title>Bull Mods | Fer3on_Mod Official Mods</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta
     name="description"
-    content="Bull Mods official hub for Fer3on_Mod mods with multi-language support and clean UI."
+    content="Bull Mods official hub for Fer3on_Mod mods with a clean, professional interface."
   />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="page">
-    <!-- HEADER -->
-    <header class="site-header">
-      <div class="brand">
-        <a href="#" class="brand-logo">
-          <!-- تأكد أن logo.png موجود في نفس المجلد -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#" class="brand">
+        <div class="brand-logo">
           <img src="./logo.png" alt="Bull Mods Logo" />
-        </a>
+        </div>
         <div class="brand-text">
-          <div class="brand-text-main">BULL MODS</div>
-          <div class="brand-text-sub" data-i18n="brandSubtitle">
+          <div class="brand-title">BULL MODS</div>
+          <div class="brand-subtitle" data-i18n="brandSubtitle">
             الموقع الرسمي لمودات Fer3on_Mod
           </div>
         </div>
-      </div>
+      </a>
+
+      <nav class="main-nav">
+        <a href="#mods" data-i18n="navMods">المودات</a>
+        <a href="#howto" data-i18n="navHowTo">طريقة التثبيت</a>
+        <a href="#community" data-i18n="navCommunity">المجتمع والدعم</a>
+      </nav>
 
       <div class="header-actions">
-        <!-- اختيار اللغة -->
-        <div class="language-wrapper">
-          <button class="icon-btn" id="langButton" type="button" title="اللغة">
-            🌐
-            <span class="icon-btn-label" data-i18n="langShort">AR</span>
+        <!-- language -->
+        <div class="lang-wrapper">
+          <button class="icon-btn" id="langButton" type="button">
+            🌐 <span class="icon-btn-label" data-i18n="langShort">AR</span>
           </button>
-          <div class="language-menu" id="langMenu">
+          <div class="lang-menu" id="langMenu">
             <button data-lang="ar" class="active">العربية</button>
             <button data-lang="en">English</button>
-            <button data-lang="fr">Français</button>
           </div>
         </div>
 
-        <!-- تبديل الثيم -->
-        <button
-          class="icon-btn"
-          id="themeToggle"
-          type="button"
-          title="الوضع الليلي / الفاتح"
-        >
+        <!-- theme -->
+        <button class="icon-btn" id="themeToggle" type="button">
           ☾
         </button>
       </div>
-    </header>
+    </div>
+  </header>
 
-    <!-- شريط حالة / تنبيه -->
-    <section class="banner" id="statusBanner">
-      <div class="banner-indicator"></div>
-      <div>
-        <div class="banner-title" data-i18n="statusTitle">الخادم يعمل بكفاءة</div>
-        <div class="banner-text" data-i18n="statusText">
-          روابط التحميل الرسمية متاحة حاليًا، يمكنك التحميل بأمان من هذه الصفحة فقط.
-        </div>
-      </div>
-    </section>
-
-    <!-- HERO / CTA -->
-    <main>
-      <section class="section hero">
-        <div class="hero-content">
-          <div class="pill" data-i18n="heroPill">Bull Mods الرسمي</div>
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-text-block">
+          <p class="badge" data-i18n="heroBadge">موقع رسمي • Bull Mods</p>
           <h1 class="hero-title" data-i18n="heroTitle">
-            مودات جاهزة، تجربة لعب مختلفة بالكامل.
+            مودات مرتبة، تنزيل مباشر، تجربة لعب احترافية.
           </h1>
           <p class="hero-text" data-i18n="heroText">
-            انضم لآلاف اللاعبين الذين يستخدمون Bull Mods لتحسين الأداء والجرافيك
-            والتحكم في كل تفاصيل اللعب. كل شيء من مكان واحد وبشكل آمن ورسمي.
+            كل ما تحتاجه من مودات Bull Mods في مكان واحد: روابط مباشرة، شرح واضح،
+            وتحديثات مستمرة بدون تعقيد أو إعلانات مزعجة.
           </p>
 
-          <div class="hero-buttons">
+          <div class="hero-actions">
             <a
               href="https://example.com/your-main-mod.zip"
               class="btn btn-primary"
               id="mainDownload"
             >
               <span data-i18n="ctaButton">تحميل الحزمة الرئيسية</span>
-              <span>⬇</span>
+              <span class="btn-icon">⬇</span>
             </a>
 
             <a
               href="https://discord.com"
+              class="btn btn-outline"
+              id="discordLink"
               target="_blank"
               rel="noopener noreferrer"
-              class="btn btn-ghost"
-              id="discordLink"
             >
-              <span class="discord-badge"></span>
+              <span class="discord-dot"></span>
               <span data-i18n="discordButton">الانضمام إلى Discord</span>
             </a>
           </div>
 
-          <p class="hero-note" data-i18n="ctaNote">
+          <p class="hero-note" data-i18n="heroNote">
             يفضّل تشغيل اللعبة بنسخة أصلية للحصول على أفضل أداء وثبات مع المودات.
           </p>
 
           <div class="hero-meta">
             <span data-i18n="heroSafe">
-              روابط تحميل مباشرة، بدون إعلانات منبثقة أو إعادة توجيه.
+              روابط مباشرة بدون إعلانات منبثقة أو اختصارات.
             </span>
             <span class="dot">•</span>
-            <span data-i18n="heroVersion">
-              يتم تحديث المودات بشكل مستمر عند صدور نسخ جديدة من اللعبة.
+            <span data-i18n="heroUpdates">
+              يتم تحديث المودات مع كل نسخة رئيسية من اللعبة.
             </span>
           </div>
         </div>
 
         <aside class="hero-panel">
-          <h2 class="hero-panel-title" data-i18n="updatesTitle">
-            آخر التحديثات
-          </h2>
-          <ul class="updates-list" id="updatesList">
-            <!-- يمتلئ من JS -->
-          </ul>
-          <div class="updates-footer" data-i18n="updatesHint">
-            تابع قناة Telegram أو Discord لمعرفة أي تحديثات حرجة للمودات.
+          <div class="hero-panel-inner">
+            <p class="hero-panel-label" data-i18n="panelLabel">
+              حالة المودات
+            </p>
+            <h2 class="hero-panel-title" data-i18n="panelTitle">
+              جاهزة للتحميل الآن
+            </h2>
+            <p class="hero-panel-text" data-i18n="panelText">
+              جميع الروابط في هذه الصفحة رسمية وآمنة. لا ننصح باستخدام أي
+              مصادر أخرى غير Bull Mods.
+            </p>
+
+            <ul class="updates-list" id="updatesList">
+              <!-- تمتلىء من JS -->
+            </ul>
           </div>
         </aside>
-      </section>
+      </div>
+    </section>
 
-      <!-- MODS GRID -->
-      <section class="section">
-        <header class="section-header">
+    <!-- MODS -->
+    <section class="section" id="mods">
+      <div class="container">
+        <div class="section-header">
           <div>
             <h2 class="section-title" data-i18n="modsTitle">المودات المتاحة</h2>
             <p class="section-subtitle" data-i18n="modsSubtitle">
-              قائمة بالمودات الرسمية من Bull Mods. يمكنك تعديل القائمة أو إضافة مودات
-              جديدة من ملف main.js بكل سهولة.
+              اختر المود المناسب لجهازك وأسلوب لعبك. كل مود يحتوي وصفًا مختصرًا
+              وحجم الملف وآخر تحديث.
             </p>
           </div>
           <div class="section-controls">
-            <select id="modsFilter" class="select">
-              <option value="all" data-i18n="filterAll">جميع المودات</option>
-              <option value="stable" data-i18n="filterStable">مستقر</option>
-              <option value="beta" data-i18n="filterBeta">تجريبي</option>
-            </select>
+            <label class="filter-label">
+              <span data-i18n="filterLabel">عرض حسب:</span>
+              <select id="modsFilter" class="select">
+                <option value="all" data-i18n="filterAll">كل المودات</option>
+                <option value="stable" data-i18n="filterStable">المودات المستقرة</option>
+                <option value="beta" data-i18n="filterBeta">المودات التجريبية</option>
+              </select>
+            </label>
           </div>
-        </header>
-
-        <div id="modsGrid" class="mods-grid">
-          <!-- يمتلئ من JS -->
         </div>
-      </section>
 
-      <!-- COMMUNITY SECTION -->
-      <section class="section section-split">
-        <div class="split-block">
-          <h2 class="section-title" data-i18n="communityTitle">
-            المجتمع والدعم
-          </h2>
+        <div class="mods-grid" id="modsGrid">
+          <!-- تمتلىء من JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW TO INSTALL -->
+    <section class="section" id="howto">
+      <div class="container two-columns">
+        <div>
+          <h2 class="section-title" data-i18n="howTitle">طريقة التثبيت</h2>
+          <p class="section-subtitle" data-i18n="howText">
+            لا تحتاج أن تكون خبيرًا لتستخدم المودات. اتبع الخطوات التالية،
+            وستكون جاهزًا خلال دقائق.
+          </p>
+          <ol class="steps-list">
+            <li data-i18n="step1">
+              حمّل ملف المود بصيغة ZIP من الروابط الموجودة في هذه الصفحة فقط.
+            </li>
+            <li data-i18n="step2">
+              فك الضغط، ثم انقل المجلدات والملفات إلى مجلد اللعبة كما هو موضح
+              في ملف الشرح المرفق.
+            </li>
+            <li data-i18n="step3">
+              افتح اللعبة، وفعّل المود من داخل قائمة الإعدادات الخاصة به إن
+              وجدت.
+            </li>
+          </ol>
+        </div>
+
+        <div class="card info-card">
+          <h3 class="info-title" data-i18n="infoTitle">
+            نصائح قبل التثبيت
+          </h3>
+          <ul class="info-list">
+            <li data-i18n="tip1">
+              احتفظ بنسخة احتياطية من ملفات اللعبة الأصلية قبل استبدال أي ملفات.
+            </li>
+            <li data-i18n="tip2">
+              لا تستخدم أكثر من مود يعدل نفس الشيء في اللعبة في نفس الوقت، لتجنب
+              التعارضات.
+            </li>
+            <li data-i18n="tip3">
+              لو حصل كراش، جرّب تعطيل المودات واحدًا تلو الآخر لمعرفة سبب
+              المشكلة.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMMUNITY -->
+    <section class="section" id="community">
+      <div class="container two-columns">
+        <div>
+          <h2 class="section-title" data-i18n="communityTitle">المجتمع والدعم</h2>
           <p class="section-subtitle" data-i18n="communityText">
-            واجهتك مشكلة مع التثبيت؟ تحتاج إعدادات خاصة لجهازك؟ فريق Bull Mods
-            والمجتمع في انتظارك على Discord و Telegram لمساعدتك خطوة بخطوة.
+            فريق Bull Mods موجود لمساعدتك. تواصل معنا عبر Discord أو Telegram
+            لأي استفسار أو مشكلة أثناء التثبيت أو اللعب.
           </p>
 
-          <div class="links-row">
+          <div class="link-row">
             <a
               href="https://t.me"
               target="_blank"
@@ -170,59 +215,60 @@
               class="link-chip"
               id="telegramLink"
             >
-              <span class="chip-icon">↗</span>
+              <span class="link-icon">↗</span>
               <span data-i18n="footerTelegram">قناة Telegram الرسمية</span>
             </a>
+
             <a
               href="https://example.com/about"
               class="link-chip"
               id="aboutLink"
             >
-              <span class="chip-icon">?</span>
+              <span class="link-icon">?</span>
               <span data-i18n="footerAbout">تعرف على الفريق</span>
             </a>
           </div>
         </div>
 
-        <div class="split-block split-block-highlight">
-          <h3 class="mini-title" data-i18n="installTitle">
-            خطوات تثبيت سريعة
+        <div class="card support-card">
+          <h3 class="info-title" data-i18n="supportTitle">
+            متى تتواصل معنا؟
           </h3>
-          <ol class="install-steps">
-            <li data-i18n="installStep1">
-              حمّل الملف المضغوط (ZIP) من الروابط الرسمية في هذه الصفحة فقط.
+          <ul class="info-list">
+            <li data-i18n="support1">
+              إذا كان المود لا يعمل بعد اتباع الخطوات بشكل صحيح.
             </li>
-            <li data-i18n="installStep2">
-              فك الضغط وانقل ملفات المود إلى مجلد اللعبة حسب الشرح المرفق.
+            <li data-i18n="support2">
+              إذا كانت لديك مواصفات جهاز خاصة وتريد إعدادات مخصصة.
             </li>
-            <li data-i18n="installStep3">
-              شغّل اللعبة، وتأكد من تطبيق الإعدادات المقترحة داخل القائمة الخاصة بالمود.
+            <li data-i18n="support3">
+              إذا لاحظت رابط تحميل مكسور أو إصدار قديم في الصفحة.
             </li>
-          </ol>
+          </ul>
         </div>
-      </section>
-    </main>
+      </div>
+    </section>
+  </main>
 
-    <!-- FOOTER -->
-    <footer class="site-footer">
+  <footer class="site-footer">
+    <div class="container footer-inner">
       <div class="footer-left">
-        <span class="footer-copy" data-i18n="footerCopy">
+        <span data-i18n="footerCopy">
           © Bull Mods - جميع الحقوق محفوظة.
         </span>
-        <span class="footer-separator">•</span>
-        <span class="footer-small" data-i18n="footerDisclaimer">
-          لا يتحمل فريق Bull Mods مسؤولية أي استخدام مخالف لقوانين اللعبة أو المنصة.
+        <span class="footer-dot">•</span>
+        <span class="footer-note" data-i18n="footerDisclaimer">
+          استخدام المودات يكون على مسؤوليتك الشخصية حسب قوانين اللعبة والمنصة.
         </span>
       </div>
       <div class="footer-right">
-        <span class="footer-small" data-i18n="footerMadeBy">
+        <span class="footer-note" data-i18n="footerMadeBy">
           تم التطوير بواسطة Fer3on_Mod & Bull Mods Team
         </span>
       </div>
-    </footer>
-  </div>
+    </div>
+  </footer>
 
-  <!-- سكربت الواجهة -->
   <script src="./main.js" defer></script>
 </body>
 </html>
