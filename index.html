@@ -1,282 +1,645 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-  <meta charset="UTF-8" />
-  <title>Bull Mods | Fer3on_Mod Official Mods</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta
-    name="description"
-    content="Bull Mods official hub for Fer3on_Mod mods with a clean, professional interface."
-  />
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <!-- HEADER -->
-  <header class="site-header">
-    <div class="container header-inner">
-      <a href="#" class="brand">
-        <div class="brand-logo">
-          <!-- logo.png لازم يكون في نفس المجلد -->
-          <img src="./logo.png" alt="Bull Mods Logo" />
-        </div>
-        <div class="brand-text">
-          <div class="brand-title">BULL MODS</div>
-          <div class="brand-subtitle" data-i18n="brandSubtitle">
-            الموقع الرسمي لمودات Fer3on_Mod
-          </div>
-        </div>
-      </a>
+:root {
+  /* light theme */
+  --bg: #f5f5f5;
+  --surface: #ffffff;
+  --surface-soft: #f9fafb;
+  --border: #e5e7eb;
+  --text-main: #111827;
+  --text-muted: #6b7280;
+  --accent: #ef4444;
+  --accent-soft: #fee2e2;
+  --accent-strong: #dc2626;
+  --shadow-soft: 0 10px 25px rgba(15, 23, 42, 0.08);
+}
 
-      <nav class="main-nav">
-        <a href="#mods" data-i18n="navMods">المودات</a>
-        <a href="#howto" data-i18n="navHowTo">طريقة التثبيت</a>
-        <a href="#community" data-i18n="navCommunity">المجتمع والدعم</a>
-      </nav>
+html.dark-theme {
+  --bg: #020617;
+  --surface: #020617;
+  --surface-soft: #020617;
+  --border: #111827;
+  --text-main: #f9fafb;
+  --text-muted: #9ca3af;
+  --accent: #f97373;
+  --accent-soft: rgba(248, 113, 113, 0.15);
+  --accent-strong: #fb7185;
+  --shadow-soft: 0 16px 40px rgba(15, 23, 42, 0.8);
+}
 
-      <div class="header-actions">
-        <!-- اختيار اللغة -->
-        <div class="lang-wrapper">
-          <button class="icon-btn" id="langButton" type="button">
-            🌐 <span class="icon-btn-label" data-i18n="langShort">AR</span>
-          </button>
-          <div class="lang-menu" id="langMenu">
-            <button data-lang="ar" class="active">العربية</button>
-            <button data-lang="en">English</button>
-            <button data-lang="fr">Français</button>
-          </div>
-        </div>
+/* reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
-        <!-- تبديل الثيم -->
-        <button class="icon-btn" id="themeToggle" type="button">
-          ☾
-        </button>
-      </div>
-    </div>
-  </header>
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
 
-  <!-- MAIN -->
-  <main>
-    <!-- HERO -->
-    <section class="hero">
-      <div class="container hero-grid">
-        <div class="hero-text-block">
-          <p class="badge" data-i18n="heroBadge">موقع رسمي • Bull Mods</p>
-          <h1 class="hero-title" data-i18n="heroTitle">
-            مودات جاهزة، تجربة لعب مختلفة بالكامل.
-          </h1>
-          <p class="hero-text" data-i18n="heroText">
-            كل مودات Bull Mods في مكان واحد: روابط مباشرة، شرح واضح، وتحديثات
-            مستمرة بدون تعقيد أو إعلانات مزعجة.
-          </p>
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: var(--bg);
+  color: var(--text-main);
+}
 
-          <div class="hero-actions">
-            <a
-              href="https://example.com/your-main-mod.zip"
-              class="btn btn-primary"
-              id="mainDownload"
-            >
-              <span data-i18n="ctaButton">تحميل الحزمة الرئيسية</span>
-              <span class="btn-icon">⬇</span>
-            </a>
+/* layout helper */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
 
-            <a
-              href="https://discord.com"
-              class="btn btn-outline"
-              id="discordLink"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <span class="discord-dot"></span>
-              <span data-i18n="discordButton">الانضمام إلى Discord</span>
-            </a>
-          </div>
+/* HEADER */
+.site-header {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
 
-          <p class="hero-note" data-i18n="heroNote">
-            يفضّل تشغيل اللعبة بنسخة أصلية للحصول على أفضل أداء وثبات مع المودات.
-          </p>
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 10px 0;
+}
 
-          <div class="hero-meta">
-            <span data-i18n="heroSafe">
-              روابط مباشرة بدون إعلانات منبثقة أو اختصارات.
-            </span>
-            <span class="dot">•</span>
-            <span data-i18n="heroUpdates">
-              يتم تحديث المودات مع كل نسخة رئيسية من اللعبة.
-            </span>
-          </div>
-        </div>
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: inherit;
+}
 
-        <aside class="hero-panel">
-          <div class="hero-panel-inner">
-            <p class="hero-panel-label" data-i18n="panelLabel">حالة المودات</p>
-            <h2 class="hero-panel-title" data-i18n="panelTitle">
-              جاهزة للتحميل الآن
-            </h2>
-            <p class="hero-panel-text" data-i18n="panelText">
-              جميع الروابط في هذه الصفحة رسمية وآمنة. لا ننصح باستخدام أي مصادر
-              أخرى غير Bull Mods.
-            </p>
+.brand-logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  overflow: hidden;
+  border: 2px solid var(--accent-soft);
+  background: #000;
+}
 
-            <ul class="updates-list" id="updatesList">
-              <!-- يتم تعبئته من JS -->
-            </ul>
-          </div>
-        </aside>
-      </div>
-    </section>
+.brand-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
 
-    <!-- MODS -->
-    <section class="section" id="mods">
-      <div class="container">
-        <div class="section-header">
-          <div>
-            <h2 class="section-title" data-i18n="modsTitle">المودات المتاحة</h2>
-            <p class="section-subtitle" data-i18n="modsSubtitle">
-              اختر المود المناسب لجهازك وأسلوب لعبك. كل مود يحتوي وصفًا مختصرًا،
-              حجم الملف، وآخر تحديث.
-            </p>
-          </div>
-          <div class="section-controls">
-            <label class="filter-label">
-              <span data-i18n="filterLabel">عرض حسب:</span>
-              <select id="modsFilter" class="select">
-                <option value="all" data-i18n="filterAll">كل المودات</option>
-                <option value="stable" data-i18n="filterStable">
-                  المودات المستقرة
-                </option>
-                <option value="beta" data-i18n="filterBeta">
-                  المودات التجريبية
-                </option>
-              </select>
-            </label>
-          </div>
-        </div>
+.brand-text {
+  display: flex;
+  flex-direction: column;
+}
 
-        <div class="mods-grid" id="modsGrid">
-          <!-- يتم تعبئته من JS -->
-        </div>
-      </div>
-    </section>
+.brand-title {
+  font-size: 1.05rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
 
-    <!-- HOW TO INSTALL -->
-    <section class="section" id="howto">
-      <div class="container two-columns">
-        <div>
-          <h2 class="section-title" data-i18n="howTitle">طريقة التثبيت</h2>
-          <p class="section-subtitle" data-i18n="howText">
-            اتبع هذه الخطوات البسيطة لتثبيت المودات بدون مشاكل أو تعارضات مع
-            اللعبة.
-          </p>
-          <ol class="steps-list">
-            <li data-i18n="step1">
-              حمّل ملف المود بصيغة ZIP من الروابط الموجودة في هذه الصفحة فقط.
-            </li>
-            <li data-i18n="step2">
-              فك الضغط، ثم انقل المجلدات والملفات إلى مجلد اللعبة كما هو موضح في
-              ملف الشرح المرفق.
-            </li>
-            <li data-i18n="step3">
-              افتح اللعبة، وفعّل المود من داخل قائمة الإعدادات الخاصة به إن
-              وُجدت.
-            </li>
-          </ol>
-        </div>
+.brand-subtitle {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
 
-        <div class="card info-card">
-          <h3 class="info-title" data-i18n="infoTitle">
-            نصائح قبل التثبيت
-          </h3>
-          <ul class="info-list">
-            <li data-i18n="tip1">
-              احتفظ بنسخة احتياطية من ملفات اللعبة الأصلية قبل استبدال أي ملفات.
-            </li>
-            <li data-i18n="tip2">
-              تجنّب تشغيل أكثر من مود يعدّل نفس الجزء من اللعبة في نفس الوقت.
-            </li>
-            <li data-i18n="tip3">
-              لو حصل كراش، جرّب تعطيل المودات واحدًا تلو الآخر لمعرفة سبب
-              المشكلة.
-            </li>
-          </ul>
-        </div>
-      </div>
-    </section>
+.main-nav {
+  display: flex;
+  gap: 10px;
+}
 
-    <!-- COMMUNITY -->
-    <section class="section" id="community">
-      <div class="container two-columns">
-        <div>
-          <h2 class="section-title" data-i18n="communityTitle">
-            المجتمع والدعم
-          </h2>
-          <p class="section-subtitle" data-i18n="communityText">
-            لو واجهت أي مشكلة أثناء التثبيت أو اللعب، تواصل معنا على Discord أو
-            Telegram للحصول على مساعدة مباشرة.
-          </p>
+.main-nav a {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  padding: 4px 8px;
+  border-radius: 999px;
+  text-decoration: none;
+}
 
-          <div class="link-row">
-            <a
-              href="https://t.me"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="link-chip"
-              id="telegramLink"
-            >
-              <span class="link-icon">↗</span>
-              <span data-i18n="footerTelegram">قناة Telegram الرسمية</span>
-            </a>
+.main-nav a:hover {
+  background: var(--surface-soft);
+  color: var(--text-main);
+}
 
-            <a
-              href="https://example.com/about"
-              class="link-chip"
-              id="aboutLink"
-            >
-              <span class="link-icon">?</span>
-              <span data-i18n="footerAbout">تعرف على الفريق</span>
-            </a>
-          </div>
-        </div>
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
 
-        <div class="card support-card">
-          <h3 class="info-title" data-i18n="supportTitle">
-            متى تتواصل معنا؟
-          </h3>
-          <ul class="info-list">
-            <li data-i18n="support1">
-              إذا كان المود لا يعمل بعد اتباع خطوات التثبيت بشكل صحيح.
-            </li>
-            <li data-i18n="support2">
-              إذا كانت مواصفات جهازك خاصة وتحتاج إعدادات مخصصة.
-            </li>
-            <li data-i18n="support3">
-              إذا لاحظت رابط تحميل مكسور أو إصدار قديم في الصفحة.
-            </li>
-          </ul>
-        </div>
-      </div>
-    </section>
-  </main>
+/* icon buttons */
+.icon-btn {
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--surface-soft);
+  color: var(--text-muted);
+  padding: 5px 10px;
+  font-size: 0.8rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+}
 
-  <!-- FOOTER -->
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <div class="footer-left">
-        <span data-i18n="footerCopy">
-          © Bull Mods - جميع الحقوق محفوظة.
-        </span>
-        <span class="footer-dot">•</span>
-        <span class="footer-note" data-i18n="footerDisclaimer">
-          استخدام المودات يكون على مسؤوليتك الشخصية حسب قوانين اللعبة والمنصة.
-        </span>
-      </div>
-      <div class="footer-right">
-        <span class="footer-note" data-i18n="footerMadeBy">
-          تم التطوير بواسطة Fer3on_Mod & Bull Mods Team
-        </span>
-      </div>
-    </div>
-  </footer>
+.icon-btn-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+}
 
-  <script src="./main.js" defer></script>
-</body>
-</html>
+/* language menu */
+.lang-wrapper {
+  position: relative;
+}
+
+.lang-menu {
+  position: absolute;
+  top: 110%;
+  inset-inline-end: 0;
+  min-width: 120px;
+  background: var(--surface);
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-soft);
+  padding: 4px;
+  display: none;
+  z-index: 20;
+}
+
+.lang-menu.open {
+  display: block;
+}
+
+.lang-menu button {
+  width: 100%;
+  border: none;
+  background: transparent;
+  padding: 6px 8px;
+  text-align: start;
+  font-size: 0.8rem;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.lang-menu button:hover {
+  background: var(--surface-soft);
+}
+
+.lang-menu button.active {
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* HERO */
+.hero {
+  background: var(--surface-soft);
+  border-bottom: 1px solid var(--border);
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+  gap: 24px;
+  padding: 26px 0 30px;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: var(--surface);
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+}
+
+.hero-title {
+  font-size: clamp(1.7rem, 2.5vw, 2.1rem);
+  font-weight: 800;
+  margin: 0 0 8px;
+}
+
+.hero-text {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  max-width: 520px;
+  margin-bottom: 14px;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.btn {
+  border-radius: 999px;
+  padding: 9px 16px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #ffffff;
+  border: none;
+}
+
+.btn-primary:hover {
+  background: var(--accent-strong);
+}
+
+.btn-outline {
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text-main);
+}
+
+.btn-outline:hover {
+  background: #e5e7eb;
+}
+
+.btn-icon {
+  font-size: 1.1rem;
+}
+
+.discord-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 999px;
+  background: #5865f2;
+}
+
+.hero-note {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+
+.hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.hero-meta .dot {
+  opacity: 0.6;
+}
+
+/* hero panel */
+.hero-panel {
+  display: flex;
+}
+
+.hero-panel-inner {
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  padding: 12px 12px 10px;
+  box-shadow: var(--shadow-soft);
+  font-size: 0.85rem;
+}
+
+.hero-panel-label {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+}
+
+.hero-panel-title {
+  margin: 0 0 6px;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.hero-panel-text {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+
+.updates-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.update-item {
+  padding: 6px 0;
+  border-top: 1px solid var(--border);
+}
+
+.update-item:first-child {
+  border-top: none;
+}
+
+.update-title {
+  font-size: 0.85rem;
+  margin-bottom: 2px;
+}
+
+.update-meta {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+/* SECTIONS */
+.section {
+  padding: 24px 0 28px;
+}
+
+.section-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.section-title {
+  font-size: 1.25rem;
+  margin: 0 0 4px;
+}
+
+.section-subtitle {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.section-controls {
+  flex-shrink: 0;
+}
+
+/* filter */
+.filter-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+}
+
+.select {
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  padding: 6px 10px;
+  font-size: 0.8rem;
+  background: var(--surface-soft);
+  color: var(--text-main);
+}
+
+/* MODS */
+.mods-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 12px;
+}
+
+.mod-card {
+  border-radius: 10px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 9px 10px 8px;
+  font-size: 0.85rem;
+  box-shadow: var(--shadow-soft);
+}
+
+.mod-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.mod-title {
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.mod-game {
+  font-size: 0.76rem;
+  color: var(--text-muted);
+}
+
+.mod-status {
+  font-size: 0.7rem;
+  padding: 2px 7px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  white-space: nowrap;
+}
+
+.mod-status-stable {
+  border-color: #22c55e;
+  color: #16a34a;
+}
+
+.mod-status-beta {
+  border-color: #eab308;
+  color: #ca8a04;
+}
+
+.mod-status-broken {
+  border-color: #f97373;
+  color: #b91c1c;
+}
+
+.mod-desc {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin: 4px 0 6px;
+  line-height: 1.5;
+}
+
+.mod-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 6px;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+}
+
+.mod-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-bottom: 7px;
+}
+
+.mod-tag {
+  font-size: 0.7rem;
+  padding: 2px 6px;
+  border-radius: 999px;
+  background: var(--surface-soft);
+  color: var(--text-muted);
+}
+
+.mod-download-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+}
+
+.mod-download-btn {
+  flex: 1;
+  text-align: center;
+  border-radius: 999px;
+  padding: 6px 0;
+  font-size: 0.8rem;
+  font-weight: 600;
+  background: var(--accent);
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.mod-download-btn:hover {
+  background: var(--accent-strong);
+}
+
+.mod-note {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+/* TWO COLUMNS */
+.two-columns {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+  gap: 18px;
+}
+
+/* CARDS & LISTS */
+.card {
+  border-radius: 10px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 11px 13px;
+  box-shadow: var(--shadow-soft);
+  font-size: 0.86rem;
+}
+
+.info-title {
+  font-size: 0.95rem;
+  margin: 0 0 6px;
+}
+
+.info-list,
+.steps-list {
+  margin: 0;
+  padding-inline-start: 18px;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+/* COMMUNITY LINKS */
+.link-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.link-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  font-size: 0.82rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+.link-chip:hover {
+  background: var(--surface-soft);
+}
+
+.link-icon {
+  width: 18px;
+  height: 18px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+}
+
+/* FOOTER */
+.site-footer {
+  border-top: 1px solid var(--border);
+  background: var(--surface);
+  padding: 10px 0 12px;
+  font-size: 0.8rem;
+}
+
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.footer-left,
+.footer-right {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: center;
+}
+
+.footer-note {
+  color: var(--text-muted);
+}
+
+.footer-dot {
+  opacity: 0.6;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .hero-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .hero-panel {
+    order: -1; /* البانيل تبقى فوق في الموبايل */
+    margin-bottom: 10px;
+  }
+  .two-columns {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 720px) {
+  .header-inner {
+    flex-wrap: wrap;
+  }
+  .main-nav {
+    display: none; /* ممكن نضيف منيو موبايل بعدين */
+  }
+}
+
+@media (max-width: 540px) {
+  .section {
+    padding-inline: 0;
+  }
+}
