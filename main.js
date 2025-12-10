@@ -1,30 +1,30 @@
-// ========= بيانات المحتوى باللغتين =========
+// =================== بيانات اللغات والمودات ===================
 const siteData = {
   ar: {
     dir: "rtl",
-    brandSubtitle: "الموقع الرسمي لمودات Fer3on_Mod",
     langShort: "AR",
+    brandSubtitle: "الموقع الرسمي لمودات Fer3on_Mod",
 
     navMods: "المودات",
     navHowTo: "طريقة التثبيت",
     navCommunity: "المجتمع والدعم",
 
     heroBadge: "موقع رسمي • Bull Mods",
-    heroTitle: "مودات مرتبة، تنزيل مباشر، تجربة لعب احترافية.",
+    heroTitle: "مودات جاهزة، تجربة لعب مختلفة بالكامل.",
     heroText:
-      "كل ما تحتاجه من مودات Bull Mods في مكان واحد: روابط مباشرة، شرح واضح، وتحديثات مستمرة بدون تعقيد أو إعلانات مزعجة.",
+      "كل مودات Bull Mods في مكان واحد: روابط مباشرة، شرح واضح، وتحديثات مستمرة بدون تعقيد أو إعلانات مزعجة.",
     ctaButton: "تحميل الحزمة الرئيسية",
     discordButton: "الانضمام إلى Discord",
     heroNote:
       "يُفضّل تشغيل اللعبة بنسخة أصلية للحصول على أفضل أداء وثبات مع المودات.",
     heroSafe:
-      "روابط مباشرة بدون إعلانات منبثقة أو اختصارات مزعجة في التحميل.",
+      "روابط مباشرة بدون إعلانات منبثقة أو اختصارات مزعجة أثناء التحميل.",
     heroUpdates: "يتم تحديث المودات عند صدور نسخ جديدة من اللعبة.",
 
     panelLabel: "حالة المودات",
     panelTitle: "جاهزة للتحميل الآن",
     panelText:
-      "كل الروابط في هذه الصفحة رسمية وآمنة. لا ننصح باستخدام أي ملفات من قنوات أو مواقع غير Bull Mods.",
+      "كل الروابط في هذه الصفحة رسمية وآمنة. لا ننصح باستخدام أي ملفات من قنوات أو مواقع أخرى غير Bull Mods.",
 
     modsTitle: "المودات المتاحة",
     modsSubtitle:
@@ -46,15 +46,16 @@ const siteData = {
     infoTitle: "نصائح قبل التثبيت",
     tip1: "احتفظ بنسخة احتياطية من ملفات اللعبة الأصلية قبل استبدال أي ملفات.",
     tip2:
-      "تجنب تشغيل أكثر من مود يعدل نفس الجزء من اللعبة في نفس الوقت لتفادي الكراش.",
+      "تجنّب تشغيل أكثر من مود يعدّل نفس الجزء من اللعبة في نفس الوقت لتفادي التعارض.",
     tip3:
       "في حال حدوث مشكلة، جرّب تعطيل المودات واحدًا تلو الآخر لمعرفة المود المسبب للمشكلة.",
 
     communityTitle: "المجتمع والدعم",
     communityText:
-      "لو واجهت أي مشكلة أثناء التثبيت أو اللعب، تواصل معنا على Discord أو Telegram لتحصل على مساعدة مباشرة.",
+      "لو واجهت أي مشكلة أثناء التثبيت أو اللعب، تواصل معنا على Discord أو Telegram للحصول على مساعدة مباشرة.",
     footerTelegram: "قناة Telegram الرسمية",
     footerAbout: "تعرف على الفريق",
+
     supportTitle: "متى تتواصل معنا؟",
     support1: "إذا كان المود لا يعمل بعد اتباع خطوات التثبيت بشكل صحيح.",
     support2: "إذا كانت مواصفات جهازك خاصة وتحتاج إعدادات مخصصة.",
@@ -123,8 +124,8 @@ const siteData = {
 
   en: {
     dir: "ltr",
-    brandSubtitle: "Official mod hub by Fer3on_Mod",
     langShort: "EN",
+    brandSubtitle: "Official mod hub by Fer3on_Mod",
 
     navMods: "Mods",
     navHowTo: "How to install",
@@ -165,7 +166,8 @@ const siteData = {
       "Launch the game and enable the mod from its settings or dedicated menu if available.",
 
     infoTitle: "Tips before installing",
-    tip1: "Always keep a backup of your original game files before replacing anything.",
+    tip1:
+      "Always keep a backup of your original game files before replacing anything.",
     tip2:
       "Avoid running multiple mods that change the same part of the game at the same time.",
     tip3:
@@ -176,6 +178,7 @@ const siteData = {
       "If you run into any issues while installing or playing, reach out via Discord or Telegram for direct help.",
     footerTelegram: "Official Telegram channel",
     footerAbout: "Meet the team",
+
     supportTitle: "When to contact us?",
     support1: "The mod does not work after following the steps correctly.",
     support2: "Your PC has special specs and you need a custom setup.",
@@ -241,13 +244,142 @@ const siteData = {
       },
     ],
   },
+
+  fr: {
+    dir: "ltr",
+    langShort: "FR",
+    brandSubtitle: "Centre officiel de mods par Fer3on_Mod",
+
+    navMods: "Mods",
+    navHowTo: "Installation",
+    navCommunity: "Communauté",
+
+    heroBadge: "Site officiel • Bull Mods",
+    heroTitle:
+      "Mods prêts à l’emploi, téléchargements directs, expérience de jeu avancée.",
+    heroText:
+      "Tous les Bull Mods au même endroit : liens directs, instructions claires et mises à jour régulières, sans pubs intrusives.",
+    ctaButton: "Télécharger le pack principal",
+    discordButton: "Rejoindre Discord",
+    heroNote:
+      "Pour une meilleure stabilité, utilisez une copie originale du jeu.",
+    heroSafe:
+      "Liens directs uniquement. Pas de pop-ups, de raccourcisseurs ou d’installateurs cachés.",
+    heroUpdates:
+      "Les mods sont mis à jour dès que de nouvelles versions du jeu sortent.",
+
+    panelLabel: "État des mods",
+    panelTitle: "Prêts au téléchargement",
+    panelText:
+      "Tous les liens de cette page sont officiels et sûrs. Nous déconseillons l’utilisation de fichiers provenant d’autres sources.",
+
+    modsTitle: "Mods disponibles",
+    modsSubtitle:
+      "Choisissez le mod adapté à votre configuration et à votre style de jeu. Vous pouvez modifier cette liste directement dans main.js.",
+    filterLabel: "Filtrer :",
+    filterAll: "Tous les mods",
+    filterStable: "Stables uniquement",
+    filterBeta: "Bêta uniquement",
+
+    howTitle: "Comment installer",
+    howText:
+      "Suivez ces étapes simples pour installer les mods en toute sécurité et éviter les conflits.",
+    step1:
+      "Téléchargez l’archive ZIP à partir des liens présents sur cette page uniquement.",
+    step2:
+      "Extrayez l’archive puis copiez les dossiers et fichiers dans le répertoire du jeu comme indiqué dans le guide inclus.",
+    step3:
+      "Lancez le jeu et activez le mod depuis le menu ou les paramètres dédiés, si disponibles.",
+
+    infoTitle: "Conseils avant l’installation",
+    tip1:
+      "Gardez toujours une sauvegarde des fichiers originaux du jeu avant de les remplacer.",
+    tip2:
+      "Évitez d’utiliser plusieurs mods modifiant la même partie du jeu en même temps.",
+    tip3:
+      "En cas de problème, désactivez les mods un par un pour identifier celui qui pose souci.",
+
+    communityTitle: "Communauté & support",
+    communityText:
+      "Si vous rencontrez un problème lors de l’installation ou en jeu, contactez-nous via Discord ou Telegram pour obtenir de l’aide.",
+    footerTelegram: "Chaîne Telegram officielle",
+    footerAbout: "Découvrir l’équipe",
+
+    supportTitle: "Quand nous contacter ?",
+    support1:
+      "Si le mod ne fonctionne pas après avoir suivi correctement les étapes.",
+    support2:
+      "Si votre configuration est particulière et nécessite des réglages spécifiques.",
+    support3:
+      "Si vous trouvez un lien de téléchargement cassé ou une version obsolète.",
+
+    footerCopy: "© Bull Mods - Tous droits réservés.",
+    footerDisclaimer:
+      "Vous êtes responsable de l’utilisation des mods conformément aux règles du jeu et de la plateforme.",
+    footerMadeBy: "Développé par Fer3on_Mod & Bull Mods Team",
+
+    updates: [
+      {
+        title: "Mise à jour de Performance Pack vers v2.3.1",
+        meta: "Correction des chutes de FPS sur certaines cartes + presets compétitifs.",
+        date: "2025-01-20",
+      },
+      {
+        title: "Améliorations Visual Enhancer v1.4.0",
+        meta: "Meilleure gestion des scènes nocturnes et performances plus stables.",
+        date: "2024-12-10",
+      },
+    ],
+
+    mods: [
+      {
+        id: "perf-pack",
+        name: "Bull Mod - Performance Pack",
+        game: "Jeu XYZ",
+        version: "v2.3.1",
+        description:
+          "Pack d’optimisation complet : plus de FPS, moins de lag et presets prêts pour la compétition.",
+        tags: ["Performance", "FPS", "Tweaks"],
+        downloadUrl: "https://example.com/performance-pack.zip",
+        size: "7.8 Mo",
+        updatedAt: "2025-01-20",
+        status: "beta",
+      },
+      {
+        id: "visual-enhancer",
+        name: "Bull Mod - Visual Enhancer",
+        game: "Jeu XYZ",
+        version: "v1.4.0",
+        description:
+          "Graphismes, éclairage et couleurs améliorés tout en restant adaptés aux PC milieu de gamme.",
+        tags: ["Graphismes", "Visuel", "Reshade"],
+        downloadUrl: "https://example.com/visual-enhancer.zip",
+        size: "12.1 Mo",
+        updatedAt: "2024-12-10",
+        status: "stable",
+      },
+      {
+        id: "support-bot-ui",
+        name: "Bull Mod - Support Bot UI",
+        game: "Multi-plateforme",
+        version: "v1.0.0",
+        description:
+          "Interface web légère pour le bot de support Bull Mods avec une mise en page claire.",
+        tags: ["Support", "Web"],
+        downloadUrl: "https://example.com/support-bot-ui.zip",
+        size: "3.4 Mo",
+        updatedAt: "2024-11-05",
+        status: "stable",
+      },
+    ],
+  },
 };
 
-// ========= حالة اللغة والثيم =========
+// =================== حالة عامة ===================
 let currentLang = "ar";
 let currentTheme = "light";
 
-// ========= DOM =========
+// DOM refs
 const langButton = document.getElementById("langButton");
 const langMenu = document.getElementById("langMenu");
 const themeToggle = document.getElementById("themeToggle");
@@ -255,7 +387,7 @@ const modsGrid = document.getElementById("modsGrid");
 const modsFilter = document.getElementById("modsFilter");
 const updatesList = document.getElementById("updatesList");
 
-// ========= Helpers =========
+// =================== Helpers ===================
 function statusClass(status) {
   if (status === "beta") return "mod-status mod-status-beta";
   if (status === "broken") return "mod-status mod-status-broken";
@@ -267,6 +399,11 @@ function statusLabel(status, lang) {
     if (status === "beta") return "تجريبي";
     if (status === "broken") return "مكسور";
     return "مستقر";
+  }
+  if (lang === "fr") {
+    if (status === "beta") return "BÊTA";
+    if (status === "broken") return "CASSÉ";
+    return "STABLE";
   }
   if (status === "beta") return "BETA";
   if (status === "broken") return "BROKEN";
@@ -290,13 +427,14 @@ function applyTheme(theme) {
 }
 
 function applyLanguage(lang) {
-  currentLang = lang;
   const data = siteData[lang];
+  currentLang = lang;
+
   const html = document.documentElement;
   html.lang = lang;
-  html.dir = data.dir;
+  html.dir = data.dir || "rtl";
 
-  // نصوص عامة
+  // النصوص
   document.querySelectorAll("[data-i18n]").forEach((el) => {
     const key = el.getAttribute("data-i18n");
     if (data[key]) {
@@ -304,11 +442,17 @@ function applyLanguage(lang) {
     }
   });
 
-  // زر اللغة
+  // nav
+  document.querySelectorAll(".main-nav a").forEach((link) => {
+    const key = link.getAttribute("data-i18n");
+    if (key && data[key]) link.textContent = data[key];
+  });
+
+  // label اللغة على الزر
   const label = langButton.querySelector(".icon-btn-label");
   if (label) label.textContent = data.langShort || lang.toUpperCase();
 
-  // تفعيل زر القائمة
+  // تفعيل زر اللغة
   langMenu.querySelectorAll("button").forEach((btn) => {
     btn.classList.toggle("active", btn.dataset.lang === lang);
   });
@@ -324,7 +468,7 @@ function applyLanguage(lang) {
 function renderUpdates() {
   const data = siteData[currentLang];
   updatesList.innerHTML = "";
-  data.updates.forEach((u) => {
+  (data.updates || []).forEach((u) => {
     const li = document.createElement("li");
     li.className = "update-item";
     li.innerHTML = `
@@ -348,20 +492,39 @@ function renderMods() {
   }
 
   const sizeLabel =
-    currentLang === "ar" ? "الحجم" : currentLang === "en" ? "Size" : "Size";
+    currentLang === "ar"
+      ? "الحجم"
+      : currentLang === "fr"
+      ? "Taille"
+      : "Size";
   const updatedLabel =
-    currentLang === "ar" ? "آخر تحديث" : currentLang === "en" ? "Updated" : "Updated";
+    currentLang === "ar"
+      ? "آخر تحديث"
+      : currentLang === "fr"
+      ? "Dernière maj"
+      : "Updated";
   const versionLabel =
-    currentLang === "ar" ? "الإصدار" : currentLang === "en" ? "Version" : "Version";
+    currentLang === "ar"
+      ? "الإصدار"
+      : currentLang === "fr"
+      ? "Version"
+      : "Version";
   const downloadLabel =
-    currentLang === "ar" ? "تحميل المود" : currentLang === "en" ? "Download mod" : "Download";
+    currentLang === "ar"
+      ? "تحميل المود"
+      : currentLang === "fr"
+      ? "Télécharger"
+      : "Download mod";
   const directLabel =
-    currentLang === "ar" ? "رابط مباشر" : currentLang === "en" ? "Direct link" : "Direct";
+    currentLang === "ar"
+      ? "رابط مباشر"
+      : currentLang === "fr"
+      ? "Lien direct"
+      : "Direct link";
 
   mods.forEach((mod) => {
     const card = document.createElement("article");
     card.className = "mod-card";
-
     card.innerHTML = `
       <div class="mod-header">
         <div>
@@ -388,29 +551,24 @@ function renderMods() {
         <span class="mod-note">${directLabel}</span>
       </div>
     `;
-
     modsGrid.appendChild(card);
   });
 }
 
-// ========= Events =========
+// =================== Events ===================
 document.addEventListener("DOMContentLoaded", () => {
-  // استعادة التفضيلات
+  // استعادة التفضيلات إن وجدت
   try {
     const savedLang = localStorage.getItem("bullmods_lang");
-    if (savedLang && siteData[savedLang]) {
-      currentLang = savedLang;
-    }
+    if (savedLang && siteData[savedLang]) currentLang = savedLang;
     const savedTheme = localStorage.getItem("bullmods_theme");
-    if (savedTheme === "dark" || savedTheme === "light") {
-      currentTheme = savedTheme;
-    }
+    if (savedTheme === "dark" || savedTheme === "light") currentTheme = savedTheme;
   } catch (_) {}
 
   applyTheme(currentTheme);
   applyLanguage(currentLang);
 
-  // lang toggle
+  // فتح/إغلاق منيو اللغة
   langButton.addEventListener("click", (e) => {
     e.stopPropagation();
     langMenu.classList.toggle("open");
@@ -429,11 +587,11 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // theme toggle
+  // ثيم
   themeToggle.addEventListener("click", () => {
     applyTheme(currentTheme === "light" ? "dark" : "light");
   });
 
-  // filter
+  // فلتر المودات
   modsFilter.addEventListener("change", renderMods);
 });
