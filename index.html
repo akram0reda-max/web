@@ -1,491 +1,25 @@
 <!DOCTYPE html>
-<html lang="en" dir="rtl">
+<html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
-  <title>Bull Mods Official</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="" />
-
-  <style>
-    :root {
-      /* ألوان الوضع الداكن */
-      --bg: #000000;
-      --bg-alt: #050505;
-      --section-bg: linear-gradient(to bottom, #080808, #040000);
-      --section-border: #1a1a1a;
-      --card-bg: #0c0c0c;
-      --card-border: #262626;
-      --text: #f9fafb;
-      --muted: #b3b3b3;
-      --accent: #ff2a2a;
-      --accent-soft: #2b0000;
-      --pill-bg: #191919;
-      --pill-border: #333333;
-    }
-
-    /* ألوان الوضع الفاتح */
-    .light-theme {
-      --bg: #f3f4f6;
-      --bg-alt: #ffffff;
-      --section-bg: #ffffff;
-      --section-border: #d1d5db;
-      --card-bg: #f9fafb;
-      --card-border: #e5e7eb;
-      --text: #111827;
-      --muted: #6b7280;
-      --accent: #ef4444;
-      --accent-soft: #fee2e2;
-      --pill-bg: #f3f4f6;
-      --pill-border: #d1d5db;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    }
-
-    body {
-      min-height: 100vh;
-      background:
-        radial-gradient(circle at top, rgba(239, 68, 68, 0.16) 0, var(--bg) 45%, var(--bg) 100%);
-      color: var(--text);
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .page {
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 16px 16px 40px;
-    }
-
-    /* ===== HEADER ===== */
-    header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 24px;
-      gap: 12px;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .brand-logo {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      border: 2px solid rgba(255, 255, 255, 0.8);
-      overflow: hidden;
-      background: #000;
-      flex-shrink: 0;
-    }
-
-    .light-theme .brand-logo {
-      border-color: rgba(15, 23, 42, 0.9);
-    }
-
-    .brand-logo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    .brand-text-main {
-      font-size: 1.1rem;
-      font-weight: 800;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-    }
-
-    .brand-text-sub {
-      font-size: 0.78rem;
-      color: var(--muted);
-      margin-top: 1px;
-    }
-
-    .header-actions {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .header-icon-btn,
-    .header-menu-btn {
-      border-radius: 999px;
-      border: 1px solid var(--section-border);
-      background: var(--bg-alt);
-      font-size: 0.8rem;
-      color: var(--muted);
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 6px 10px;
-      gap: 4px;
-    }
-
-    .header-icon-btn {
-      width: 32px;
-      height: 32px;
-      padding: 0;
-    }
-
-    .header-menu-btn span:last-child {
-      font-size: 0.9rem;
-    }
-
-    .language-wrapper {
-      position: relative;
-    }
-
-    .language-menu {
-      position: absolute;
-      top: 110%;
-      right: 0;
-      min-width: 130px;
-      background: var(--bg-alt);
-      border-radius: 12px;
-      border: 1px solid var(--section-border);
-      padding: 6px;
-      display: none;
-      box-shadow: 0 14px 35px rgba(0, 0, 0, 0.5);
-      z-index: 20;
-    }
-
-    .language-menu.open {
-      display: block;
-    }
-
-    .language-menu button {
-      width: 100%;
-      text-align: right;
-      padding: 6px 8px;
-      border-radius: 8px;
-      border: none;
-      background: transparent;
-      color: var(--text);
-      font-size: 0.8rem;
-      cursor: pointer;
-    }
-
-    .language-menu button:hover {
-      background: var(--pill-bg);
-    }
-
-    .language-menu button.active {
-      background: var(--accent-soft);
-      color: var(--accent);
-      font-weight: 600;
-    }
-
-    /* ===== SECTION WRAPPER ===== */
-    .section {
-      padding: 26px 18px;
-      border-radius: 22px;
-      background: var(--section-bg);
-      border: 1px solid var(--section-border);
-      margin-bottom: 20px;
-    }
-
-    /* ===== LAST UPDATES ===== */
-    .centered {
-      text-align: center;
-    }
-
-    .pill {
-      display: inline-block;
-      padding: 5px 12px;
-      border-radius: 999px;
-      background: var(--pill-bg);
-      border: 1px solid var(--pill-border);
-      font-size: 0.78rem;
-      color: var(--muted);
-      margin-bottom: 14px;
-    }
-
-    .updates-title {
-      font-size: 1.4rem;
-      font-weight: 700;
-      margin-bottom: 8px;
-    }
-
-    .updates-text {
-      font-size: 0.9rem;
-      color: var(--muted);
-    }
-
-    /* ===== CTA / READY SECTION ===== */
-    .cta-title {
-      font-size: 1.6rem;
-      font-weight: 700;
-      margin-bottom: 10px;
-    }
-
-    .cta-text {
-      font-size: 0.92rem;
-      line-height: 1.7;
-      color: var(--muted);
-      max-width: 480px;
-      margin: 0 auto 20px;
-    }
-
-    .cta-text span.brand {
-      color: var(--text);
-      font-weight: 600;
-    }
-
-    .cta-buttons {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      max-width: 360px;
-      margin: 0 auto 10px;
-    }
-
-    .btn-primary {
-      border-radius: 999px;
-      border: none;
-      padding: 11px 18px;
-      background: var(--accent);
-      font-size: 1rem;
-      font-weight: 700;
-      color: #fff;
-      cursor: pointer;
-    }
-
-    .btn-primary span {
-      margin-inline: 4px;
-    }
-
-    .btn-discord {
-      border-radius: 999px;
-      border: 1px solid rgba(255, 255, 255, 0.3);
-      padding: 10px 18px;
-      background: var(--bg-alt);
-      font-size: 0.95rem;
-      color: var(--text);
-      cursor: pointer;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .light-theme .btn-discord {
-      border-color: #d1d5db;
-    }
-
-    .btn-discord-icon {
-      width: 18px;
-      height: 18px;
-      border-radius: 999px;
-      background: #5865f2;
-      display: inline-block;
-    }
-
-    .cta-note {
-      font-size: 0.8rem;
-      color: var(--muted);
-      margin-top: 4px;
-    }
-
-    /* ===== MODS SECTION ===== */
-    .section-title {
-      font-size: 1.2rem;
-      font-weight: 600;
-      margin-bottom: 8px;
-    }
-
-    .section-subtitle {
-      font-size: 0.9rem;
-      color: var(--muted);
-      margin-bottom: 16px;
-    }
-
-    .mods-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 12px;
-    }
-
-    .mod-card {
-      background: var(--card-bg);
-      border-radius: 16px;
-      border: 1px solid var(--card-border);
-      padding: 12px 12px 11px;
-      font-size: 0.86rem;
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-    }
-
-    .mod-header {
-      display: flex;
-      justify-content: space-between;
-      gap: 8px;
-      align-items: flex-start;
-    }
-
-    .mod-name {
-      font-weight: 600;
-      margin-bottom: 2px;
-    }
-
-    .mod-game {
-      font-size: 0.78rem;
-      color: var(--muted);
-    }
-
-    .mod-status {
-      font-size: 0.7rem;
-      border-radius: 999px;
-      padding: 2px 7px;
-      border: 1px solid #444;
-      background: var(--bg-alt);
-      color: var(--text);
-      white-space: nowrap;
-    }
-
-    .mod-status-beta {
-      border-color: #facc15;
-      color: #facc15;
-    }
-
-    .mod-status-broken {
-      border-color: #f97373;
-      color: #f97373;
-    }
-
-    .mod-desc {
-      color: var(--muted);
-      line-height: 1.5;
-    }
-
-    .mod-meta {
-      display: flex;
-      justify-content: space-between;
-      font-size: 0.75rem;
-      color: var(--muted);
-      flex-wrap: wrap;
-      gap: 4px;
-    }
-
-    .mod-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 4px;
-      margin-top: 3px;
-    }
-
-    .mod-tag {
-      font-size: 0.7rem;
-      border-radius: 999px;
-      padding: 2px 6px;
-      border: 1px solid #333;
-      color: #bcbcbc;
-    }
-
-    .mod-download {
-      margin-top: 8px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .mod-download-btn {
-      flex: 1;
-      border-radius: 999px;
-      padding: 7px 0;
-      background: var(--accent);
-      border: none;
-      color: #fff;
-      font-size: 0.82rem;
-      font-weight: 600;
-      text-align: center;
-      cursor: pointer;
-    }
-
-    .mod-download-note {
-      font-size: 0.7rem;
-      color: var(--muted);
-      text-align: center;
-      min-width: 70px;
-    }
-
-    /* ===== FOOTER ===== */
-    footer {
-      margin-top: 16px;
-      padding-top: 10px;
-      border-top: 1px solid var(--section-border);
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 0.8rem;
-      color: var(--muted);
-    }
-
-    .footer-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      align-items: center;
-    }
-
-    .footer-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .footer-link-icon {
-      width: 18px;
-      height: 18px;
-      border-radius: 999px;
-      border: 1px solid #444;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.75rem;
-    }
-
-    .light-theme .footer-link-icon {
-      border-color: #d1d5db;
-    }
-
-    /* ===== RESPONSIVE ===== */
-    @media (max-width: 600px) {
-      .section {
-        padding-inline: 14px;
-      }
-      .cta-title {
-        font-size: 1.4rem;
-      }
-    }
-  </style>
+  <title>Bull Mods | Official Mods Hub</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="Bull Mods official hub for Fer3on_Mod mods with multi-language support and clean UI."
+  />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="page">
     <!-- HEADER -->
-    <header>
+    <header class="site-header">
       <div class="brand">
-        <div class="brand-logo">
-          <!-- logo.png يجب أن يكون في نفس المجلد -->
-          <img src="logo.png" alt="Bull Mods Logo" />
-        </div>
-        <div>
+        <a href="#" class="brand-logo">
+          <!-- تأكد أن logo.png موجود في نفس المجلد -->
+          <img src="./logo.png" alt="Bull Mods Logo" />
+        </a>
+        <div class="brand-text">
           <div class="brand-text-main">BULL MODS</div>
           <div class="brand-text-sub" data-i18n="brandSubtitle">
             الموقع الرسمي لمودات Fer3on_Mod
@@ -496,8 +30,9 @@
       <div class="header-actions">
         <!-- اختيار اللغة -->
         <div class="language-wrapper">
-          <button class="header-icon-btn" id="langButton" title="اللغة">
+          <button class="icon-btn" id="langButton" type="button" title="اللغة">
             🌐
+            <span class="icon-btn-label" data-i18n="langShort">AR</span>
           </button>
           <div class="language-menu" id="langMenu">
             <button data-lang="ar" class="active">العربية</button>
@@ -507,412 +42,187 @@
         </div>
 
         <!-- تبديل الثيم -->
-        <button class="header-icon-btn" id="themeToggle" title="الوضع الليلي / الفاتح">
+        <button
+          class="icon-btn"
+          id="themeToggle"
+          type="button"
+          title="الوضع الليلي / الفاتح"
+        >
           ☾
-        </button>
-
-        <!-- زر القائمة (شكلي) -->
-        <button class="header-menu-btn" type="button">
-          <span data-i18n="menuLabel">القائمة</span>
-          <span>☰</span>
         </button>
       </div>
     </header>
 
-    <!-- آخر التحديثات -->
-    <section class="section centered">
-      <div class="pill" data-i18n="updatesPill">التحديثات</div>
-      <h2 class="updates-title" data-i18n="updatesTitle">آخر التحديثات</h2>
-      <p class="updates-text" data-i18n="updatesText">
-        لا توجد تحديثات حالياً. ترقّب جديدنا قريبًا على Bull Mods.
-      </p>
-    </section>
-
-    <!-- جاهز للبدء؟ -->
-    <section class="section centered">
-      <h2 class="cta-title" data-i18n="ctaTitle">جاهز للبدء؟</h2>
-      <p class="cta-text" data-i18n="ctaText">
-        انضم لآلاف المستخدمين الذين يستمتعون بمودات
-        <span class="brand">Bull Mods</span>. حمِّل الآن وابدأ تجربة لعب مختلفة تمامًا ومعدّلة على طريقتك.
-      </p>
-
-      <div class="cta-buttons">
-        <!-- غيّر رابط التحميل هنا -->
-        <a href="https://example.com/your-main-mod.zip" class="btn-primary" id="mainDownload">
-          <span data-i18n="ctaButton">تحميل الآن</span>
-          <span>⬇</span>
-        </a>
-
-        <!-- غيّر رابط الديسكورد هنا -->
-        <a href="https://discord.com" target="_blank" class="btn-discord" id="discordLink">
-          <span class="btn-discord-icon"></span>
-          <span data-i18n="discordButton">انضم إلى Discord</span>
-        </a>
+    <!-- شريط حالة / تنبيه -->
+    <section class="banner" id="statusBanner">
+      <div class="banner-indicator"></div>
+      <div>
+        <div class="banner-title" data-i18n="statusTitle">الخادم يعمل بكفاءة</div>
+        <div class="banner-text" data-i18n="statusText">
+          روابط التحميل الرسمية متاحة حاليًا، يمكنك التحميل بأمان من هذه الصفحة فقط.
+        </div>
       </div>
-
-      <p class="cta-note" data-i18n="ctaNote">
-        يفضّل تشغيل اللعبة بنسخة أصلية للحصول على أفضل تجربة مع المودات.
-      </p>
     </section>
 
-    <!-- المودات المتاحة -->
-    <section class="section">
-      <h3 class="section-title" data-i18n="modsTitle">المودات المتاحة</h3>
-      <p class="section-subtitle" data-i18n="modsSubtitle">
-        هنا ستجد قائمة بالمودات الرسمية من Bull Mods. يمكنك إضافة أو تعديل المودات من داخل الكود بسهولة.
-      </p>
+    <!-- HERO / CTA -->
+    <main>
+      <section class="section hero">
+        <div class="hero-content">
+          <div class="pill" data-i18n="heroPill">Bull Mods الرسمي</div>
+          <h1 class="hero-title" data-i18n="heroTitle">
+            مودات جاهزة، تجربة لعب مختلفة بالكامل.
+          </h1>
+          <p class="hero-text" data-i18n="heroText">
+            انضم لآلاف اللاعبين الذين يستخدمون Bull Mods لتحسين الأداء والجرافيك
+            والتحكم في كل تفاصيل اللعب. كل شيء من مكان واحد وبشكل آمن ورسمي.
+          </p>
 
-      <div id="modsGrid" class="mods-grid"></div>
-    </section>
+          <div class="hero-buttons">
+            <a
+              href="https://example.com/your-main-mod.zip"
+              class="btn btn-primary"
+              id="mainDownload"
+            >
+              <span data-i18n="ctaButton">تحميل الحزمة الرئيسية</span>
+              <span>⬇</span>
+            </a>
 
-    <!-- تذييل وروابط -->
-    <footer>
-      <div class="footer-links">
-        <!-- غيّر روابط تيليجرام / التعريف هنا -->
-        <a href="https://t.me" target="_blank" class="footer-link" id="telegramLink">
-          <span class="footer-link-icon">↗</span>
-          <span data-i18n="footerTelegram">قناة Telegram</span>
-        </a>
-        <a href="https://example.com/about" class="footer-link" id="aboutLink">
-          <span class="footer-link-icon">?</span>
-          <span data-i18n="footerAbout">تعرّف علينا أكثر</span>
-        </a>
+            <a
+              href="https://discord.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn-ghost"
+              id="discordLink"
+            >
+              <span class="discord-badge"></span>
+              <span data-i18n="discordButton">الانضمام إلى Discord</span>
+            </a>
+          </div>
+
+          <p class="hero-note" data-i18n="ctaNote">
+            يفضّل تشغيل اللعبة بنسخة أصلية للحصول على أفضل أداء وثبات مع المودات.
+          </p>
+
+          <div class="hero-meta">
+            <span data-i18n="heroSafe">
+              روابط تحميل مباشرة، بدون إعلانات منبثقة أو إعادة توجيه.
+            </span>
+            <span class="dot">•</span>
+            <span data-i18n="heroVersion">
+              يتم تحديث المودات بشكل مستمر عند صدور نسخ جديدة من اللعبة.
+            </span>
+          </div>
+        </div>
+
+        <aside class="hero-panel">
+          <h2 class="hero-panel-title" data-i18n="updatesTitle">
+            آخر التحديثات
+          </h2>
+          <ul class="updates-list" id="updatesList">
+            <!-- يمتلئ من JS -->
+          </ul>
+          <div class="updates-footer" data-i18n="updatesHint">
+            تابع قناة Telegram أو Discord لمعرفة أي تحديثات حرجة للمودات.
+          </div>
+        </aside>
+      </section>
+
+      <!-- MODS GRID -->
+      <section class="section">
+        <header class="section-header">
+          <div>
+            <h2 class="section-title" data-i18n="modsTitle">المودات المتاحة</h2>
+            <p class="section-subtitle" data-i18n="modsSubtitle">
+              قائمة بالمودات الرسمية من Bull Mods. يمكنك تعديل القائمة أو إضافة مودات
+              جديدة من ملف main.js بكل سهولة.
+            </p>
+          </div>
+          <div class="section-controls">
+            <select id="modsFilter" class="select">
+              <option value="all" data-i18n="filterAll">جميع المودات</option>
+              <option value="stable" data-i18n="filterStable">مستقر</option>
+              <option value="beta" data-i18n="filterBeta">تجريبي</option>
+            </select>
+          </div>
+        </header>
+
+        <div id="modsGrid" class="mods-grid">
+          <!-- يمتلئ من JS -->
+        </div>
+      </section>
+
+      <!-- COMMUNITY SECTION -->
+      <section class="section section-split">
+        <div class="split-block">
+          <h2 class="section-title" data-i18n="communityTitle">
+            المجتمع والدعم
+          </h2>
+          <p class="section-subtitle" data-i18n="communityText">
+            واجهتك مشكلة مع التثبيت؟ تحتاج إعدادات خاصة لجهازك؟ فريق Bull Mods
+            والمجتمع في انتظارك على Discord و Telegram لمساعدتك خطوة بخطوة.
+          </p>
+
+          <div class="links-row">
+            <a
+              href="https://t.me"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="link-chip"
+              id="telegramLink"
+            >
+              <span class="chip-icon">↗</span>
+              <span data-i18n="footerTelegram">قناة Telegram الرسمية</span>
+            </a>
+            <a
+              href="https://example.com/about"
+              class="link-chip"
+              id="aboutLink"
+            >
+              <span class="chip-icon">?</span>
+              <span data-i18n="footerAbout">تعرف على الفريق</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="split-block split-block-highlight">
+          <h3 class="mini-title" data-i18n="installTitle">
+            خطوات تثبيت سريعة
+          </h3>
+          <ol class="install-steps">
+            <li data-i18n="installStep1">
+              حمّل الملف المضغوط (ZIP) من الروابط الرسمية في هذه الصفحة فقط.
+            </li>
+            <li data-i18n="installStep2">
+              فك الضغط وانقل ملفات المود إلى مجلد اللعبة حسب الشرح المرفق.
+            </li>
+            <li data-i18n="installStep3">
+              شغّل اللعبة، وتأكد من تطبيق الإعدادات المقترحة داخل القائمة الخاصة بالمود.
+            </li>
+          </ol>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="footer-left">
+        <span class="footer-copy" data-i18n="footerCopy">
+          © Bull Mods - جميع الحقوق محفوظة.
+        </span>
+        <span class="footer-separator">•</span>
+        <span class="footer-small" data-i18n="footerDisclaimer">
+          لا يتحمل فريق Bull Mods مسؤولية أي استخدام مخالف لقوانين اللعبة أو المنصة.
+        </span>
       </div>
-
-      <div data-i18n="footerCopy">
-        © Bull Mods - جميع الحقوق محفوظة.
+      <div class="footer-right">
+        <span class="footer-small" data-i18n="footerMadeBy">
+          تم التطوير بواسطة Fer3on_Mod & Bull Mods Team
+        </span>
       </div>
     </footer>
   </div>
 
-  <script>
-    // ===== بيانات الموقع لكل لغة =====
-    const siteData = {
-      ar: {
-        dir: "rtl",
-        brandSubtitle: "الموقع الرسمي لمودات Fer3on_Mod",
-        menuLabel: "القائمة",
-        updatesPill: "التحديثات",
-        updatesTitle: "آخر التحديثات",
-        updatesText: "لا توجد تحديثات حالياً. ترقّب جديدنا قريبًا على Bull Mods.",
-        ctaTitle: "جاهز للبدء؟",
-        ctaText:
-          "انضم لآلاف المستخدمين الذين يستمتعون بمودات Bull Mods. حمِّل الآن وابدأ تجربة لعب مختلفة تمامًا ومعدّلة على طريقتك.",
-        ctaButton: "تحميل الآن",
-        discordButton: "انضم إلى Discord",
-        ctaNote:
-          "يُفضّل تشغيل اللعبة بنسخة أصلية للحصول على أفضل تجربة مع المودات.",
-        modsTitle: "المودات المتاحة",
-        modsSubtitle:
-          "هنا ستجد قائمة بالمودات الرسمية من Bull Mods. يمكنك إضافة أو تعديل المودات من داخل الكود بسهولة.",
-        footerTelegram: "قناة Telegram",
-        footerAbout: "تعرّف علينا أكثر",
-        footerCopy: "© Bull Mods - جميع الحقوق محفوظة.",
-        mainDownloadText: "تحميل الآن",
-        discordText: "انضم إلى Discord",
-        mods: [
-          {
-            name: "Bull Mod - Performance Pack",
-            game: "Game XYZ",
-            version: "v2.3.1",
-            description:
-              "حزمة تحسين أداء شاملة: زيادة FPS، تقليل اللاج، وتخصيصات جاهزة للعب التنافسي.",
-            tags: ["أداء", "FPS", "Tweaks"],
-            downloadUrl: "https://example.com/performance-pack.zip",
-            size: "7.8 MB",
-            updatedAt: "2025-01-20",
-            status: "beta",
-          },
-          {
-            name: "Bull Mod - Visual Enhancer",
-            game: "Game XYZ",
-            version: "v1.4.0",
-            description:
-              "تحسينات جرافيك وإضاءة وألوان مع الحفاظ على أداء مستقر للأجهزة المتوسطة.",
-            tags: ["جرافيك", "Visual", "Reshade"],
-            downloadUrl: "https://example.com/visual-enhancer.zip",
-            size: "12.1 MB",
-            updatedAt: "2024-12-10",
-            status: "stable",
-          },
-          {
-            name: "Bull Mod - Support Bot UI",
-            game: "متعدد",
-            version: "v1.0.0",
-            description:
-              "واجهة ويب خفيفة للتعامل مع بوت الدعم الخاص بـ Bull Mods مع تحميل سريع.",
-            tags: ["Support", "Web"],
-            downloadUrl: "https://example.com/support-bot-ui.zip",
-            size: "3.4 MB",
-            updatedAt: "2024-11-05",
-            status: "stable",
-          },
-        ],
-      },
-      en: {
-        dir: "ltr",
-        brandSubtitle: "Official mod hub by Fer3on_Mod",
-        menuLabel: "Menu",
-        updatesPill: "Updates",
-        updatesTitle: "Latest updates",
-        updatesText: "No new updates for now. Stay tuned for fresh Bull Mods releases.",
-        ctaTitle: "Ready to start?",
-        ctaText:
-          "Join thousands of players using Bull Mods. Download now and enjoy a customized, next-level experience.",
-        ctaButton: "Download now",
-        discordButton: "Join Discord",
-        ctaNote:
-          "For the best experience, we recommend using an original game copy.",
-        modsTitle: "Available mods",
-        modsSubtitle:
-          "Here you can find the official Bull Mods collection. Edit or add your own entries easily inside the code.",
-        footerTelegram: "Telegram channel",
-        footerAbout: "Learn more about us",
-        footerCopy: "© Bull Mods - All rights reserved.",
-        mainDownloadText: "Download now",
-        discordText: "Join Discord",
-        mods: [
-          {
-            name: "Bull Mod - Performance Pack",
-            game: "Game XYZ",
-            version: "v2.3.1",
-            description:
-              "Full performance overhaul: higher FPS, reduced stutter and ready-to-use competitive presets.",
-            tags: ["Performance", "FPS", "Tweaks"],
-            downloadUrl: "https://example.com/performance-pack.zip",
-            size: "7.8 MB",
-            updatedAt: "2025-01-20",
-            status: "beta",
-          },
-          {
-            name: "Bull Mod - Visual Enhancer",
-            game: "Game XYZ",
-            version: "v1.4.0",
-            description:
-              "Improved graphics, lighting and colors while staying friendly to mid-range PCs.",
-            tags: ["Graphics", "Visual", "Reshade"],
-            downloadUrl: "https://example.com/visual-enhancer.zip",
-            size: "12.1 MB",
-            updatedAt: "2024-12-10",
-            status: "stable",
-          },
-          {
-            name: "Bull Mod - Support Bot UI",
-            game: "Multi-platform",
-            version: "v1.0.0",
-            description:
-              "Lightweight web UI for the Bull Mods support bot with fast loading and clean layout.",
-            tags: ["Support", "Web"],
-            downloadUrl: "https://example.com/support-bot-ui.zip",
-            size: "3.4 MB",
-            updatedAt: "2024-11-05",
-            status: "stable",
-          },
-        ],
-      },
-      fr: {
-        dir: "ltr",
-        brandSubtitle: "Centre officiel de mods par Fer3on_Mod",
-        menuLabel: "Menu",
-        updatesPill: "Mises à jour",
-        updatesTitle: "Dernières mises à jour",
-        updatesText:
-          "Aucune mise à jour pour le moment. Restez à l’écoute pour les prochaines versions de Bull Mods.",
-        ctaTitle: "Prêt à commencer ?",
-        ctaText:
-          "Rejoignez des milliers de joueurs qui utilisent Bull Mods. Téléchargez maintenant et profitez d’une expérience de jeu personnalisée.",
-        ctaButton: "Télécharger",
-        discordButton: "Rejoindre Discord",
-        ctaNote:
-          "Pour une meilleure expérience, il est recommandé d’utiliser une copie originale du jeu.",
-        modsTitle: "Mods disponibles",
-        modsSubtitle:
-          "Vous trouverez ici la collection officielle Bull Mods. Modifiez ou ajoutez vos propres entrées facilement dans le code.",
-        footerTelegram: "Chaîne Telegram",
-        footerAbout: "En savoir plus",
-        footerCopy: "© Bull Mods - Tous droits réservés.",
-        mainDownloadText: "Télécharger",
-        discordText: "Rejoindre Discord",
-        mods: [
-          {
-            name: "Bull Mod - Performance Pack",
-            game: "Jeu XYZ",
-            version: "v2.3.1",
-            description:
-              "Pack d’optimisation complet : plus de FPS, moins de lag et presets prêts pour la compétition.",
-            tags: ["Performance", "FPS", "Tweaks"],
-            downloadUrl: "https://example.com/performance-pack.zip",
-            size: "7.8 Mo",
-            updatedAt: "2025-01-20",
-            status: "beta",
-          },
-          {
-            name: "Bull Mod - Visual Enhancer",
-            game: "Jeu XYZ",
-            version: "v1.4.0",
-            description:
-              "Graphismes, éclairage et couleurs améliorés tout en restant adaptés aux PC milieu de gamme.",
-            tags: ["Graphismes", "Visuel", "Reshade"],
-            downloadUrl: "https://example.com/visual-enhancer.zip",
-            size: "12.1 Mo",
-            updatedAt: "2024-12-10",
-            status: "stable",
-          },
-          {
-            name: "Bull Mod - Support Bot UI",
-            game: "Multi-plateforme",
-            version: "v1.0.0",
-            description:
-              "Interface web légère pour le bot de support Bull Mods, avec chargement rapide.",
-            tags: ["Support", "Web"],
-            downloadUrl: "https://example.com/support-bot-ui.zip",
-            size: "3.4 Mo",
-            updatedAt: "2024-11-05",
-            status: "stable",
-          },
-        ],
-      },
-    };
-
-    let currentLang = "ar";
-
-    const modsGrid = document.getElementById("modsGrid");
-    const langMenu = document.getElementById("langMenu");
-    const langButton = document.getElementById("langButton");
-    const themeToggle = document.getElementById("themeToggle");
-
-    function statusClass(status) {
-      if (status === "beta") return "mod-status mod-status-beta";
-      if (status === "broken") return "mod-status mod-status-broken";
-      return "mod-status";
-    }
-
-    function statusLabel(status, lang) {
-      if (lang === "ar") {
-        if (status === "beta") return "تجريبي";
-        if (status === "broken") return "مكسور";
-        return "مستقر";
-      }
-      if (lang === "fr") {
-        if (status === "beta") return "BÊTA";
-        if (status === "broken") return "CASSÉ";
-        return "STABLE";
-      }
-      // en
-      if (status === "beta") return "BETA";
-      if (status === "broken") return "BROKEN";
-      return "STABLE";
-    }
-
-    function renderMods(lang) {
-      const data = siteData[lang];
-      modsGrid.innerHTML = "";
-      data.mods.forEach((mod) => {
-        const card = document.createElement("article");
-        card.className = "mod-card";
-        card.innerHTML = `
-          <div class="mod-header">
-            <div>
-              <div class="mod-name">${mod.name}</div>
-              <div class="mod-game">${mod.game} • ${lang === "ar" ? "الإصدار" : lang === "fr" ? "Version" : "Version"} ${mod.version}</div>
-            </div>
-            <div class="${statusClass(mod.status)}">${statusLabel(mod.status, lang)}</div>
-          </div>
-          <p class="mod-desc">${mod.description}</p>
-          <div class="mod-meta">
-            <span>${lang === "ar" ? "الحجم" : lang === "fr" ? "Taille" : "Size"}: ${mod.size}</span>
-            <span>${lang === "ar" ? "آخر تحديث" : lang === "fr" ? "Dernière maj" : "Updated"}: ${mod.updatedAt}</span>
-          </div>
-          <div class="mod-tags">
-            ${(mod.tags || [])
-              .map((t) => `<span class="mod-tag">${t}</span>`)
-              .join("")}
-          </div>
-          <div class="mod-download">
-            <a href="${mod.downloadUrl}" target="_blank" class="mod-download-btn">
-              ${lang === "ar" ? "تحميل المود" : lang === "fr" ? "Télécharger" : "Download mod"}
-            </a>
-            <div class="mod-download-note">
-              ${lang === "ar" ? "رابط مباشر" : lang === "fr" ? "Lien direct" : "Direct link"}
-            </div>
-          </div>
-        `;
-        modsGrid.appendChild(card);
-      });
-    }
-
-    function applyLanguage(lang) {
-      currentLang = lang;
-      const data = siteData[lang];
-      const html = document.documentElement;
-
-      html.lang = lang;
-      html.dir = data.dir;
-
-      document.querySelectorAll("[data-i18n]").forEach((el) => {
-        const key = el.getAttribute("data-i18n");
-        if (data[key]) {
-          el.textContent = data[key];
-        }
-      });
-
-      // تحديث نص زر التحميل الرئيسي إذا احتجنا
-      document.getElementById("mainDownload").querySelector("span").textContent =
-        data.mainDownloadText || data.ctaButton;
-
-      // Discord label
-      document
-        .getElementById("discordLink")
-        .querySelector("span:last-child").textContent =
-        data.discordText || data.discordButton;
-
-      // تفعيل الزر في القائمة
-      langMenu.querySelectorAll("button").forEach((btn) => {
-        btn.classList.toggle("active", btn.dataset.lang === lang);
-      });
-
-      renderMods(lang);
-    }
-
-    // ===== Theme toggle =====
-    let theme = "dark";
-
-    function toggleTheme() {
-      const root = document.documentElement;
-      if (theme === "dark") {
-        root.classList.add("light-theme");
-        theme = "light";
-        themeToggle.textContent = "☀";
-      } else {
-        root.classList.remove("light-theme");
-        theme = "dark";
-        themeToggle.textContent = "☾";
-      }
-    }
-
-    themeToggle.addEventListener("click", toggleTheme);
-
-    // ===== Language menu events =====
-    langButton.addEventListener("click", (e) => {
-      e.stopPropagation();
-      langMenu.classList.toggle("open");
-    });
-
-    langMenu.addEventListener("click", (e) => {
-      const lang = e.target.dataset.lang;
-      if (!lang) return;
-      applyLanguage(lang);
-      langMenu.classList.remove("open");
-    });
-
-    document.addEventListener("click", (e) => {
-      if (!langMenu.contains(e.target) && e.target !== langButton) {
-        langMenu.classList.remove("open");
-      }
-    });
-
-    // Init
-    applyLanguage("ar");
-  </script>
+  <!-- سكربت الواجهة -->
+  <script src="./main.js" defer></script>
 </body>
 </html>
